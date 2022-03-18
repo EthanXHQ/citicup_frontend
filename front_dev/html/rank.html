@@ -17,35 +17,65 @@
                     <th>排名</th>
                     <th>公司名称</th>
                     <th>证券代码</th>
+                    <th>产业类别</th>
                     <th>ESG综合得分</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>abc</td>
-                    <td>0001</td>
-                    <td>100</td>
-                </tr>
             </table>
+            <button class="bt1">更多</button>
         </div>
         
         <div class="E container">
             <h2 class="E list"> E 排名 </h2>
+            <table class="E table">
+                <tr class="E head">
+                    <th>排名</th>
+                    <th>公司名称</th>
+                    <th>证券代码</th>
+                    <th>产业类别</th>
+                    <th>E 得分</th>
+                </tr>
+            </table>
+            <button class="bt2">更多</button>
         </div>
         
         <div class="S_container">
             <h2 class="S_list"> S 排名 </h2>
+            <table class="S table">
+                <tr class="S head">
+                    <th>排名</th>
+                    <th>公司名称</th>
+                    <th>证券代码</th>
+                    <th>产业类别</th>
+                    <th>S 得分</th>
+                </tr>
+            </table>
+            <button class="bt3">更多</button>
         </div>
 
         <div class="G container">
             <h2 class="G list"> G 排名 </h2>
+            <table class="G table">
+                <tr class="G head">
+                    <th>排名</th>
+                    <th>公司名称</th>
+                    <th>证券代码</th>
+                    <th>产业类别</th>
+                    <th>G 得分</th>
+                </tr>
+            </table>
+            <button class="bt4">更多</button>
         </div>
 
+        <div class="test-slide"><h1>逐渐向上消失</h1></div>
 
-
-        <ul id="test-ul">
-            <li class="js">JavaScript</li>
-            <li name="book">Java &amp;JavaScript</li>
-        </ul>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="../js/rank.js"></script>
-    </body>
+
+        <script>
+            function success(data) {
+            console.log('获取到了data数据：')
+            console.log(data)
+            }
+        </script>
+        <script src="http://124.223.97.89:8080/com/list?callback=success"></script>
+        </body>

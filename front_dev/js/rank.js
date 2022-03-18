@@ -1,12 +1,5 @@
-$('#test-ul li[name=book]').text(); // 'Java & JavaScript'
-$('#test-ul li[name=book]').html(); // 'Java &amp; JavaScript'
-var j1 = $("#test-ul li[name=book]");
-var j2 = $("#test-ul li[name=book]");
-j1.html('<span style = "color:green">JavaScript</span>');
-j2.text('JavaScript & ECMAScript');
-j1.html('<span style = "color:green">JavaScript</span>')
-
-function creatTable(data){
+var index=0
+function creatTable(data,target){
     var tableData="<tr>"
 
     for(var i=0;i<data.length;i++){
@@ -14,12 +7,54 @@ function creatTable(data){
     }
   
     tableData+="</tr>"
-    var my_table=$(".default table")
+    var my_table=$(target)
     my_table.html(my_table.html()+tableData)
+    ++index
   }
-var arry = [1,2,3,4]
-for(var i=0;i<10;++i)
-{
-    creatTable(arry)
-}
+var arry=[]
+var div = $('.test-slide');
+div.hide()
+div.fadeIn("slow"); // 在3秒钟内逐渐向上消失
 
+
+var dic
+$.ajax({
+    url: "http://124.223.97.89:8080/com/list",
+    type: 'GET',
+    //contentType: "application/json; charset=utf-8",
+    dataType: 'JSON',//here
+    success: function (data) {
+        dic=data
+        //console.log(data);
+        //alert("success");
+    },
+    error:function(res,StatusText){
+        console.log(StatusText)
+        console.log(res)
+}
+});
+
+function ESG_add_ten(url_str)
+{
+$.ajax(
+    {
+        url:url_str,
+        type: "GET",
+        dataType: "JSON",
+        success:function(data){
+            var cur=index
+            for (var i =cur ;i < cur+10;++i)
+            {
+                arry=[index+1,data[i]["Stock_code"],data[i]["Com_name"],data[i]["Industry"],data[i]["ESG_Rating"]]
+                creatTable(arry,".default table")
+            }
+        },
+        error:function(res,StatusText)
+        {
+            console.log(StatusText)
+            alert("list1 load fail")
+        }
+    }
+)
+}
+ESG_add_ten("http://124.223.97.89:8080/esgrating/list")
