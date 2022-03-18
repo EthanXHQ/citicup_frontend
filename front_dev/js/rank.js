@@ -5,7 +5,7 @@ function creatTable(data,target,index){
     for(var i=0;i<data.length;i++){
       tableData+="<td>"+data[i]+"</td>"
     }
-  
+    
     tableData+="</tr>"
     var my_table=$(target)
     my_table.html(my_table.html()+tableData)
@@ -60,9 +60,11 @@ $.ajax(
 )
 }
 
+
+
 ESG_Init("http://124.223.97.89:8080/esgrating/list")
 
-$(".bt 1").click(function(){
+$(".bt1").click(function(){
     var cur=index1
     for (var i =cur ;i < cur+10;++i)
     {
@@ -70,9 +72,10 @@ $(".bt 1").click(function(){
         creatTable(arry,".default table",index1)
         ++index1
     }
+    //window.open("../html/cminfo.html")
 })
 
-$(".bt- 1").click(function(){
+$(".bt-1").click(function(){
     $(".default table").html('<tr class="default head"><th>排名</th><th>公司名称</th><th>证券代码</th><th>产业类别</th><th>ESG综合得分</th></tr>')
     index1=0
 })
