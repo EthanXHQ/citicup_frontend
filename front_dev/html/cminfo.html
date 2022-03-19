@@ -7,3 +7,72 @@
         <title>Company Information Display</title>
         <link rel="stylesheet" href="../css/rank.css">
     </head>
+    <body>
+        <h1 class = "main-title">公司详情</h1>
+        <div class="basic-info">
+        <span class="Repttype">公告类型:<span class="content">内容</span></span>
+        <span class="Reptdt">&nbsp;&nbsp;&nbsp;&nbsp;统计截止日期:<span class="content">内容</span></span>
+        </div>
+        <p class="Conme">公司名称:</p>
+        <p class="Stkcd">证券代码:</p>
+        <p class="Stknme">证券中文简称:</p>
+        <p class="Regcap">注册资本(元):</p>
+        <p class="Nnindnme">行业名称:</p>
+        <p class="Nnindcd">行业代码:</p>
+        <p>
+        <div class="Busscope">经营范围:<div class="content">内容</div></div>
+        </p>
+        <p>
+        <div class="Cohisty">公司沿革:<div class="content">内容</div></div>
+        </p>
+    </body>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        //alert("okk")
+        var my_url
+        my_url = window.location.href
+        //alert(my_url)
+        var len=my_url.length
+        var id = my_url[len-6]+my_url[len-5]+my_url[len-4]+my_url[len-3]+my_url[len-2]+my_url[len-1]
+        //alert(id)
+        my_url="http://124.223.97.89:8080/com/info?id="+id
+        var names=["Repttype","Reptdt","Conme","Stkcd","Stknme","Regcap","Nnindnme","Nnindcd","Busscope","Cohisty"]
+        var types={"1":"年报","2":"中报","3":"季报","4":"上市公告书","5":"招股说明书","6":"增发","7":"配股","8":"内部职工股上市","9":"其他临时公告"}
+        console.log(my_url)
+        $.ajax({
+            url: my_url,
+            type: 'GET',
+            //contentType: "application/json; charset=utf-8",
+            dataType: 'JSON',//here
+            success: function (data) {
+            console.log(data)
+            for(var i=0;i<names.length;++i)
+            {
+                if(i==0)
+                {
+                    var my_type=types[data[names[0]]]
+                    $("."+names[i]+" .content").text(my_type)
+                }
+                else if(i==1)
+                {
+                    $("."+names[i]+" .content").text(data[names[i]])
+                    //console.log($("content","."+names[i]))
+                }
+                else if(i<8)
+                {
+                    $("."+names[i]).text($("."+names[i]).text()+data[names[i]])
+                }
+                else
+                {
+                    $("."+names[i]+" .content").text(data[names[i]])
+                   // console.log($("."+names[i]+" .content"))
+                }
+            }
+            },
+            error:function(res,StatusText){
+                console.log(StatusText)
+                console.log(res)
+            }
+        });
+    </script>
