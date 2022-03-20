@@ -11,7 +11,7 @@
 <h1 class="main-title">Green <span class="thin">Storm</span><h1>
 <section class="hero-section">
   <div class="card-grid">
-    <a class="card" href="./rank.html">
+    <a class="card" name="rank" href="#void(0)">
       <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"></div>
       <div class="card__content">
         <p class="card__category">Ranking List</p>
@@ -41,5 +41,21 @@
     </a>
   <div>
 </section>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$("a[name='rank']").click(function(){
+  var str=window.location.href
+  var flag=false
+  var str2=""
+  for(var i=0;i<str.length;++i)
+  {
+      if (str[i]=="#")
+          flag=true
+      if(flag)
+          str2+=str[i]
+  }
+  window.open("../html/rank.html"+str2);
+})
+</script>
 </body>
 </html>
