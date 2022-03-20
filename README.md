@@ -1,10 +1,4 @@
 # citicup_front_dev
 
-##### push要求：
+Frontend for 2022 CitiCup (｢･ω･)｢
 
-- push 内容无 bug
-- commit 时写明增删改内容
-
-
-
-Let's start !  (｢･ω･)｢
