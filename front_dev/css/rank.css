@@ -78,7 +78,7 @@ button {
 	border-radius: 6px;
 	background: #44a2c7;
 	color: #fff;
-	position: relative;
+	position: middle;
 	top: 0;
 	transition: 0.2s ease;
 }
