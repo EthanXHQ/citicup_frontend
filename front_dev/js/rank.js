@@ -14,7 +14,6 @@ function similar(str)
         {
             return 0
         }
-    //console.log(str)
     var count=0
     var len=Industry.length
     for(var i=0;i<len;++i)
@@ -37,7 +36,6 @@ for(var i =0 ;i < this_href.length-1;++i)
         var temp=""
         for(var j=i+3;j<this_href.length;++j)
             {
-                //alert(this_href[j])
                 temp+=this_href[j]
             }
         Industry=dic[temp]
@@ -52,12 +50,6 @@ for(var i =0 ;i < this_href.length-1;++i)
         else if(sec=="e")
             ratee+=0.2
         else rateg+=0.2
-
-        //alert(ratee)
-        //alert(rates)
-        //alert(rateg)
-        alert(Industry)
-        
         break
     }
 }
@@ -98,8 +90,6 @@ $.ajax({
     dataType: 'JSON',//here
     success: function (data) {
         dic=data
-        //console.log(data);
-        //alert("success");
     },
     error:function(res,StatusText){
         console.log(StatusText)
@@ -272,9 +262,6 @@ $(".bt-4").click(function(){
     $(".G table").html('<tr class="default head"><th>排名</th><th>公司名称</th><th>证券代码</th><th>产业类别</th><th>G 得分</th></tr>')
     index4=0
 })
-//here to realize the jump
-//first , all the com_name is bounded to a link
-//console.log($("a"))
 
 function Jump2Cm_info(id)
 {

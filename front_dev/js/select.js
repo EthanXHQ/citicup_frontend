@@ -22,5 +22,5 @@ $("input:radio[name='radio1']").click(function(){
 
 $(".confirm").click(function(){
     var str=fir+sec[0]+Industry
-    window.open("../html/home.html#"+str);
+    window.open("../html/home.html#"+str,'_self');
 })
