@@ -1,84 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RankPage</title>
-        <link rel="stylesheet" href="../css/rank.css">
-    </head>
-    <body>
-        <h1 class="main-title">Rank  <span class="thin">List</span></h1>
-        
-        <div class="default container">
-            <h2 class="default list"> ESG 综合排名 </h2>
-            <table class="default table">
-                <tr class="default head">
-                    <th>排名</th>
-                    <th>公司名称</th>
-                    <th>证券代码</th>
-                    <th>产业类别</th>
-                    <th>ESG综合得分</th>
-                </tr>
-            </table>
-            <button class="bt1">更多</button>
-            <button class="bt-1">收起</button>
-        </div>
-        
-        <div class="E container">
-            <h2 class="E list"> E 排名 </h2>
-            <table class="E table">
-                <tr class="E head">
-                    <th>排名</th>
-                    <th>公司名称</th>
-                    <th>证券代码</th>
-                    <th>产业类别</th>
-                    <th>E 得分</th>
-                </tr>
-            </table>
-            <button class="bt2">更多</button>
-            <button class="bt-2">收起</button>
-        </div>
-        
-        <div class="S container">
-            <h2 class="S list"> S 排名 </h2>
-            <table class="S table">
-                <tr class="S head">
-                    <th>排名</th>
-                    <th>公司名称</th>
-                    <th>证券代码</th>
-                    <th>产业类别</th>
-                    <th>S 得分</th>
-                </tr>
-            </table>
-            <button class="bt3">更多</button>
-            <button class="bt-3">收起</button>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RankPage</title>
+    <link rel="stylesheet" href="../css/rank.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>排行榜</h1>
+        </header>
+
+        <div class="wrapper">
+            <div class="default container">
+                <header>
+                    <h2 class="default list">ESG 综合排名</h2>
+                </header>
+                <table class="default table">
+                    <tr class="default head">
+                        <th>排名</th>
+                        <th>公司名称</th>
+                        <th>证券代码</th>
+                        <th>产业类别</th>
+                        <th>ESG综合得分</th>
+                    </tr>
+                </table>
+                <button class="bt1">更多</button>
+                <button class="bt-1">收起</button>
+            </div>
         </div>
 
-        <div class="G container">
-            <h2 class="G list"> G 排名 </h2>
-            <table class="G table">
-                <tr class="G head">
-                    <th>排名</th>
-                    <th>公司名称</th>
-                    <th>证券代码</th>
-                    <th>产业类别</th>
-                    <th>G 得分</th>
-                </tr>
-            </table>
-            <button class="bt4">更多</button>
-            <button class="bt-4">收起</button>
+        <div class="wrapper">
+            <div class="E container">
+                <header>
+                    <h2 class="E list">环境排行榜</h2>
+                </header>
+                <table class="E table">
+                    <tr class="E head">
+                        <th>排名</th>
+                        <th>公司名称</th>
+                        <th>证券代码</th>
+                        <th>产业类别</th>
+                        <th>环境得分</th>
+                    </tr>
+                </table>
+                <button class="bt2">更多</button>
+                <button class="bt-2">收起</button>
+            </div>
         </div>
 
+        <div class="wrapper">
+            <div class="S container">
+                <header>
+                    <h2 class="S list">社会排行榜</h2>
+                </header>
+                <table class="S table">
+                    <tr class="S head">
+                        <th>排名</th>
+                        <th>公司名称</th>
+                        <th>证券代码</th>
+                        <th>产业类别</th>
+                        <th>S 得分</th>
+                    </tr>
+                </table>
+                <button class="bt3">更多</button>
+                <button class="bt-3">收起</button>
+            </div>
+        </div>
 
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="../js/rank.js"></script>
+        <div class="wrapper">
+            <div class="G container">
+                <header>
+                    <h2 class="G list">公司治理排名</h2>
+                </header>
+                <table class="G table">
+                    <tr class="G head">
+                        <th>排名</th>
+                        <th>公司名称</th>
+                        <th>证券代码</th>
+                        <th>产业类别</th>
+                        <th>G 得分</th>
+                    </tr>
+                </table>
+                <button class="bt4">更多</button>
+                <button class="bt-4">收起</button>
+            </div>
+        </div>
+    </div>
 
-        <script>
-            function success(data) {
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../js/rank.js"></script>
+
+    <script>
+        function success(data) {
             console.log('获取到了data数据：')
             console.log(data)
-            }
-        </script>
-        <script src="http://124.223.97.89:8080/com/list?callback=success"></script>
-        </body>
+        }
+    </script>
+    <script src="http://124.223.97.89:8080/com/list?callback=success"></script>
+</body>
