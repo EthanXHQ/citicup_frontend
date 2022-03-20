@@ -1,35 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
     <div class='wrap'>
         Log in
-          <!--<form action="#" th:object="${userAccount}" method="post" id="loginForm">
-              <input type='text' th:field="*{name}" id='name' placeholder='Name'>
-              <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-              <input type='password' th:field="*{password}" id='password' placeholder='Password'>
-              <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
-              <span th:if="${loginError} ne null" th:text="${loginError}"></span>
-          </form>-->
-
-        <form action="/user/login" th:object="${userAccount}" method="post" id="loginForm">
-              <input type='text' id='name' name="name" placeholder='Name'>
-              <input type='password' id='password' name="password" placeholder='Password' >
-              <span th:text="${loginError}" style="color: red; font-size: 24px" ></span>
+          <form>
+              <input type='text' id='username' placeholder='Email'>
+              <input type='password' id='password' placeholder='Password'>
           </form>
-        <!--<form method="post" id="loginForm">
-            <input type='text' id='name' placeholder='Name'>
-            <input type='password' id='password' placeholder='Password'>
-            <span th:if="${loginError} ne null" th:text="${loginError}"></span>
-        </form>-->
-        <button class='signup' type="submit" form="loginForm" formaction="/user/register">SIGN UP</button>
-        <button class='login' type="submit" form="loginForm" formaction="/user/login">LOG IN</button>
+        <button class='signup' href="#">SIGN UP</button> <button class='login'>LOG IN</button>
       </div>
 </body>
 </html>
